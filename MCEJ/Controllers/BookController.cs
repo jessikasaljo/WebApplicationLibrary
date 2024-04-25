@@ -7,7 +7,7 @@ namespace MCEJ.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BookController : Controller
+    public class BookController : ControllerBase
     {
         BookService bookService;
         public BookController(BookService bookService)
@@ -16,7 +16,14 @@ namespace MCEJ.Controllers
         }
 
 
-        [HttpPost]
+        [HttpGet]
+        public List<Book> GetBooks()
+        {
+            return bookService.GetBooks();
+        }
+
+
+        [HttpPost("AddBook")]
         public ActionResult Addbook(Book book)
         {
             bool requestAccepted = bookService.AddBook(book);
@@ -26,6 +33,7 @@ namespace MCEJ.Controllers
             }
             return BadRequest();
         }
+
 
         [HttpPut("EditBook")] 
         public ActionResult Editbook(Book book)
@@ -38,7 +46,7 @@ namespace MCEJ.Controllers
             return BadRequest();
         }
 
-        [HttpDelete]
+        [HttpDelete("DeleteBook")]
         public ActionResult DeleteBook(Book book)
         {
             bool success = bookService.DeleteBook(book);

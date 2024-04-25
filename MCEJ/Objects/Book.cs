@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using System.Drawing;
 
 namespace MCEJ.Objects
 {
@@ -29,6 +30,11 @@ namespace MCEJ.Objects
         }
 
         public Book() { }
+
+        public string GetInfo()
+        {
+            return "ID: " + Title + ", License Plate: " + Author + ", Model: " + Description + ", Color: " + Pages;
+        }
 
     }
 }
