@@ -5,7 +5,6 @@ namespace MCEJ.Services
     public class BookService
     {
 
-
         DatabaseContext DB;
 
         public BookService(DatabaseContext DB)

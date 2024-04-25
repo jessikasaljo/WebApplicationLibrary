@@ -6,9 +6,6 @@ namespace MCEJ.Objects
 {
     public class DatabaseContext : DbContext
     {
-        //Klar
-        //Hej
-
         public DatabaseContext(DbContextOptions options) : base(options)
         {
         }

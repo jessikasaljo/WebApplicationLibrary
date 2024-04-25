@@ -12,9 +12,5 @@ namespace MCEJ.Controllers
         {
             this.bookService = bookService;
         }
-
-        //halli hallå
-
-        //hallo
     }
 }
