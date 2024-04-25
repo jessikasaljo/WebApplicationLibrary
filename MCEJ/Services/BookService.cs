@@ -12,7 +12,7 @@ namespace MCEJ.Services
             this.DB = DB;
         }
 
-        public List<Book> GetBooks()
+        public string GetBooks()
         {
             return DB.GetBooks();
         }

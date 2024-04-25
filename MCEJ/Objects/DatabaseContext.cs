@@ -12,9 +12,14 @@ namespace MCEJ.Objects
 
         public DbSet<Book> Books { get; set; }
 
-        internal List<Book> GetBooks()
+        public List<Book> GetBooks()
         {
-            throw new NotImplementedException();
+            
+            
+
+           
         }
+
+       
     }
 }
