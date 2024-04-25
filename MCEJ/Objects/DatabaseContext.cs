@@ -1,11 +1,13 @@
 ﻿using static System.Reflection.Metadata.BlobBuilder;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using MCEJ.Services;
 
 namespace MCEJ.Objects
 {
     public class DatabaseContext : DbContext
     {
+
         public DatabaseContext(DbContextOptions options) : base(options)
         {
         }
@@ -14,10 +16,9 @@ namespace MCEJ.Objects
 
         public List<Book> GetBooks()
         {
-            
-            
+            List<Book> books = new List<Book>();
 
-           
+            return books;
         }
 
        
