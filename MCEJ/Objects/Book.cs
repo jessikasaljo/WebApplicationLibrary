@@ -20,9 +20,9 @@ namespace MCEJ.Objects
 
         public string Pages { get; set; }
 
-        public Book(int bookid, string title, string author, string description, string pages)
+        public Book(string title, string author, string description, string pages)
         {
-            BookId = bookid;
+            
             Title = title;
             Author = author;
             Description = description;

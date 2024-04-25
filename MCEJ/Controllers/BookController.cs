@@ -57,10 +57,6 @@ namespace MCEJ.Controllers
             return BadRequest();
         }
 
-        [HttpGet]
-        public string GetBooks()
-        {
-            return bookService.GetBooks();
-        }
+       
     }
 }
