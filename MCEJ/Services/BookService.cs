@@ -52,5 +52,17 @@ namespace MCEJ.Services
             DB.SaveChanges();
             return true;
         }
+
+        public bool DeleteBook(Book book)
+        {
+            Book bookToDelete = DB.Books.Find(book.BookId);
+            if (bookToDelete == null)
+            {
+                return false;
+            }
+            DB.Books.Remove(bookToDelete);
+            DB.SaveChanges();
+            return true;
+        }
     }
 }

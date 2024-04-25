@@ -37,5 +37,16 @@ namespace MCEJ.Controllers
             }
             return BadRequest();
         }
+
+        [HttpDelete]
+        public ActionResult DeleteBook(Book book)
+        {
+            bool success = bookService.DeleteBook(book);
+            if (success)
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
     }
 }
