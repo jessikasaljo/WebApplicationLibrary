@@ -29,8 +29,10 @@ namespace Library_Client
                 {
                     case 1:
                         Console.Clear();
-                        Console.WriteLine("Add a book");
-                        // Lägg till kod för att lägga till en bok
+                        Console.WriteLine("Add a book\n");
+                       
+
+                       
                         Console.WriteLine("Press Enter to return to the main menu");
                         Console.ReadLine();
                         break;
