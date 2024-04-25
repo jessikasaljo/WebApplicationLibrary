@@ -26,5 +26,16 @@ namespace MCEJ.Controllers
             }
             return BadRequest();
         }
+
+        [HttpPut("EditBook")] 
+        public ActionResult Editbook(Book book)
+        {
+            bool success = bookService.UpdateCar(book);
+            if (success)
+            {
+                return Ok();
+            }
+            return BadRequest();
+        }
     }
 }
