@@ -28,7 +28,9 @@ namespace Library_Client
 
             HttpContent httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
-           // httpClient.PostAsync("https://localhost:7072/api/Book/AddBook");
+
+            HttpResponseMessage response = client.PostAsync("https://localhost:7072/api/Book/AddBook");
+
 
         }
 
