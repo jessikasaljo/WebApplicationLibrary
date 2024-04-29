@@ -1,3 +1,4 @@
+using MCEJ.Objects;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -5,13 +6,21 @@ namespace MCEJ.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        //Fields
+        public List<Book> books { get; set; }
+        readonly ILogger<IndexModel> _logger;
+        readonly DatabaseContext _databaseContext;
 
-        public IndexModel(ILogger<IndexModel> logger)
+
+        //Constructor
+        public IndexModel(ILogger<IndexModel> logger, DatabaseContext databaseContext)
         {
             _logger = logger;
+            _databaseContext = databaseContext;
         }
 
+
+        //On Get
         public void OnGet()
         {
 

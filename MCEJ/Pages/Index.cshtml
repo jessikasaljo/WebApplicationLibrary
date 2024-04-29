@@ -5,11 +5,41 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to the Library</h1>
+    
 </div>
+<div>
+    @if (Model.books != null && Model.books.Count() > 0)
+    {
+        <p>Books in the library:</p>
+        <table>
+            <tr>
+                <th>
+                    <label asp-for="books.First().BookId"></label>
+                </th>
+                <th>
+                    @Html.DisplayFor(model => model.books[0].Title)
+                </th>
+            </tr>
 
-@foreach(Objects.Book book in Model.books)
-{
-    <p>: ID: @book.BookId, Title: @book.Title, Author: @book.Author, Description: @book.Description, Pages: @book.Pages </p>
-}
+            @foreach (Objects.Book book in Model.books)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => book.BookId)
+                    </td>
+                    <td>
+                        @book.Title
+                    </td>
+                    <td>
+                        @book.Author
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <p>There are no books in the library.</p>
+    }
+</div>

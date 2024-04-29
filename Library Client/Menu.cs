@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,9 +9,21 @@ namespace Library_Client
 {
     public class Menu
     {
+        //Fields
+        public LibraryManager libraryManager;
+        public Requests requests;
+
+
+
+        //Runs the main menu
         public void MainMenu()
         {
-            LibraryManager libraryManager = new LibraryManager();
+            libraryManager = new LibraryManager();
+            requests = new Requests();
+
+            libraryManager.menu = this;
+            libraryManager.requests = requests;
+            requests.libraryManager = libraryManager;
 
             bool continuing = true;
 

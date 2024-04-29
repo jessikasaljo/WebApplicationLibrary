@@ -1,34 +1,18 @@
-﻿using MCEJ.Objects;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 
 namespace Library_Client
 {
     public class LibraryManager
     {
-        //Get all books from database
-        List<Book> GetAllBooks()
-        {
-            HttpClient httpClient = new HttpClient();
-            HttpResponseMessage response = httpClient.GetAsync("https://localhost:7072/api/book").Result;
-            //Console.WriteLine($"Status code: {response.StatusCode}\r\n");
+        //Fields
+        public Menu menu;
+        public Requests requests;
+      
 
-            if (response.IsSuccessStatusCode)
-            {
-                string json = response.Content.ReadAsStringAsync().Result;
-                return JsonConvert.DeserializeObject<List<Book>>(json);
-            }
-            return null;
-        }
-
+        //Display all books
         public void DisplayAllBooks()
         {
-            List<Book> books = GetAllBooks();
+            List<Book> books = requests.GetAllBooks();
             if (books == null)
             {
                 Console.WriteLine("Something went wrong!");
@@ -65,7 +49,7 @@ namespace Library_Client
             Console.WriteLine("Number of pages: ");
              string newPages = Console.ReadLine();
 
-            sender.Addbook(newTitle, newAuthor, newDescription, newPages);
+            requests.AddBook(newTitle, newAuthor, newDescription, newPages);
 
 
         }
