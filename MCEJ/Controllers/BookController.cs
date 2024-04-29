@@ -15,12 +15,13 @@ namespace MCEJ.Controllers
         //man använda Postman eller Swagger.
 
         BookService bookService;
+
         public BookController(BookService bookService)
         {
             this.bookService = bookService;
         }
 
-
+        
         [HttpGet]
         public List<Book> GetBooks()
         {

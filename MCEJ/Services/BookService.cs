@@ -28,8 +28,7 @@ namespace MCEJ.Services
             {
                 return false;
             }
-            // If we make any changes, like adding something new,
-            // we must run SaveChanges to save it to the database.
+
             DB.Books.Add(book);
             DB.SaveChanges();
             return true;
