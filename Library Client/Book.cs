@@ -1,17 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace MCEJ.Objects
+namespace Library_Client
 {
     public class Book
     {
-        [Key] //Primary key
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //Auto Increment
         public int BookId { get; set; }
-        [Required]
-        [MaxLength(50)]
-
+        
         public string Title { get; set; }
 
         public string Author { get; set; }
@@ -22,16 +21,11 @@ namespace MCEJ.Objects
 
         public Book(string title, string author, string description, string pages)
         {
-            
+
             Title = title;
             Author = author;
             Description = description;
             Pages = pages;
         }
-
-        public Book() { }
-
-       
-
     }
 }

@@ -10,6 +10,8 @@ namespace Library_Client
     {
         public void AddNewBook()
         {
+            
+
             Console.WriteLine("Title: ");
              string newTitle = Console.ReadLine();
 
@@ -22,6 +24,7 @@ namespace Library_Client
             Console.WriteLine("Number of pages: ");
              string newPages = Console.ReadLine();
 
+            sender.Addbook(newTitle, newAuthor, newDescription, newPages);
 
 
         }

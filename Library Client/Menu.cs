@@ -30,6 +30,7 @@ namespace Library_Client
                     case 1:
                         Console.Clear();
                         Console.WriteLine("Add a book\n");
+                        
                        
 
                        

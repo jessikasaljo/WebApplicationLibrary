@@ -8,3 +8,8 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@foreach(Objects.Book book in Model.books)
+{
+    <p>: ID: @book.BookId, Title: @book.Title, Author: @book.Author, Description: @book.Description, Pages: @book.Pages </p>
+}
