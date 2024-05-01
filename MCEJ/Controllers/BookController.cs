@@ -52,7 +52,7 @@ namespace MCEJ.Controllers
         [HttpPut("EditBook")] 
         public ActionResult Editbook(Book book)
         {
-            bool success = bookService.UpdateCar(book);
+            bool success = bookService.UpdateBook(book);
             if (success)
             {
                 return Ok();

@@ -29,7 +29,7 @@ namespace Library_Client
             HttpContent httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
 
-            HttpResponseMessage response = client.PostAsync("https://localhost:7072/api/Book/AddBook");
+          // HttpResponseMessage response = client.PostAsync("https://localhost:7072/api/Book/AddBook");
 
 
         }
@@ -48,6 +48,29 @@ namespace Library_Client
                 return JsonConvert.DeserializeObject<List<Book>>(json);
             }
             return null;
+        }
+
+        public void EditBook(int id, string title, string author, string description, string pages)
+        {
+            // Skapa URL med id och de nya uppgifterna om boken
+            string url = $"https://localhost:7294/api/book/editBook?id={id}&title={title}&author={author}&description={description}&pages={pages}";
+
+            // Skapa en HttpClient för att skicka förfrågan till API:et
+            HttpClient client = new HttpClient();
+
+            // Skicka PUT-förfrågan till API:et
+            HttpResponseMessage response = client.PutAsync(url, null).Result;
+
+            // Kontrollera svaret från API:et
+            Console.WriteLine("Status code: " + response.StatusCode);
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Book successfully edited!");
+            }
+            else
+            {
+                Console.WriteLine("Something went wrong.");
+            }
         }
 
     }

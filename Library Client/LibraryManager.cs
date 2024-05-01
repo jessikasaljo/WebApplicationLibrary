@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Reflection;
 
 namespace Library_Client
 {
@@ -54,5 +55,48 @@ namespace Library_Client
 
         }
 
+        public void UpdateBook()
+        {
+            Console.WriteLine("Write the id of the book you want to edit.");
+            int id;
+            try
+            {
+                id = int.Parse(Console.ReadLine());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("That was not a number.");
+                return;
+            }
+             
+            BookExists(id);
+
+            Console.Clear();
+            Console.WriteLine("Input new title.");
+            string title = Console.ReadLine();
+            Console.WriteLine("Input new author.");
+            string author = Console.ReadLine();
+            Console.WriteLine("Input new description.");
+            string description = Console.ReadLine();
+            Console.WriteLine("Input new number of pages.");
+            string pages = Console.ReadLine();
+
+            // Anropa EditBook-metoden för att redigera boken
+            requests.EditBook(id, title, author, description, pages);
+        }
+        private bool BookExists(int id)
+        {
+            List<Book> books = requests.GetAllBooks();
+
+            foreach (var book in books)
+            {
+                if (book.BookId == id)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
-}
+ }
+

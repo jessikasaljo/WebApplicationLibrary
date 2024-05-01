@@ -49,7 +49,7 @@ namespace Library_Client
                     case 2:
                         Console.Clear();
                         Console.WriteLine("Update a book");
-                        // Lägg till kod för att uppdatera en bok
+                        libraryManager.UpdateBook();
                         BackToMainMenu();
                         break;
 

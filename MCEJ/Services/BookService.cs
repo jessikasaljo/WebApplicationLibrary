@@ -34,7 +34,7 @@ namespace MCEJ.Services
             return true;
         }
 
-        public bool UpdateCar(Book book)
+        public bool UpdateBook(Book book)
         {
             Book bookToUpdate = DB.Books.Find(book.BookId);
 
