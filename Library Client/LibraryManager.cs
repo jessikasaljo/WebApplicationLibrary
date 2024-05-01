@@ -15,7 +15,7 @@ namespace Library_Client
             List<Book> books = requests.GetAllBooks();
             if (books == null)
             {
-                Console.WriteLine("Something went wrong!");
+                Console.WriteLine("Something went wrong");
             }
             else
             {

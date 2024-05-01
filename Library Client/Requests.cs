@@ -11,11 +11,6 @@ namespace Library_Client
     {
         public LibraryManager libraryManager;
 
-        public Requests()
-        {
-            
-        }
-
 
         //Add book
         public void AddBook (string title, string author, string description, string pages)

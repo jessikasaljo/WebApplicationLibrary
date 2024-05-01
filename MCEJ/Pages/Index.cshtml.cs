@@ -23,7 +23,7 @@ namespace MCEJ.Pages
         //On Get
         public void OnGet()
         {
-
+            books = _databaseContext.Books.ToList();
         }
     }
 }

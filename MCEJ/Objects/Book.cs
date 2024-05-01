@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.Drawing;
 
 namespace MCEJ.Objects
 {
@@ -21,8 +20,7 @@ namespace MCEJ.Objects
         public string Pages { get; set; }
 
         public Book(string title, string author, string description, string pages)
-        {
-            
+        {         
             Title = title;
             Author = author;
             Description = description;

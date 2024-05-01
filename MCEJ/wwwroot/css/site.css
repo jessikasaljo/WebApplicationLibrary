@@ -8,6 +8,16 @@ html {
   }
 }
 
+
+body {
+    background-color: #FCF9EF;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 60px;
+    text-align: center;
+    font-family: "Roboto";
+}
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -17,6 +27,49 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
+a {
+    color: #22ABF0;
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    color: darkslategrey;
+}
+
+.library-books {
+    margin-bottom: 25px;
+    font-weight: 900;
+}
+
+.display-4 {
+    margin-bottom: 100px;
+    font-weight: 900;
+    color: #22ABF0;
+}
+
+.book-list {
+    display: inline-block;
+    text-align: left;
+    margin: 0px 0px 150px 0px;
+}
+
+header {
+    margin-bottom: 100px;
+    background-color: #FCF9EF;
+}
+
+header a {
+    color: #22ABF0;
+}
+
+
+.author-cells {
+    font-size: 13px;
+    padding-bottom: 8px;
+}
+
+.book-cells {
+    padding-right: 100px;
 }

@@ -1,6 +1,9 @@
 ﻿@page
-@model MCEJ.Pages.ViewBooksModel
+@model MCEJ.Pages.MoreInfoModel
 @{
     ViewData["Title"] = "View books";
 }
 <h1>@ViewData["More info"]</h1>
+
+<h3>@Model.book.Title by @Model.book.Author</h3>
+<p>@Model.book.Description</p>

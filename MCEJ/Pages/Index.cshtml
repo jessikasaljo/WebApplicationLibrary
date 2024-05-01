@@ -5,35 +5,31 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to the Library</h1>
+    <h1 class="display-4">THE LIBRARY</h1>
     
 </div>
-<div>
+<div class="book-list">
     @if (Model.books != null && Model.books.Count() > 0)
     {
-        <p>Books in the library:</p>
+        <h2 class="library-books">Books in the library</h2>
         <table>
-            <tr>
-                <th>
-                    <label asp-for="books.First().BookId"></label>
-                </th>
-                <th>
-                    @Html.DisplayFor(model => model.books[0].Title)
-                </th>
-            </tr>
-
-            @foreach (Objects.Book book in Model.books)
+            @{
+                var sortedBooks = Model.books.OrderBy(book => book.Title);
+            }
+            @foreach (Objects.Book book in sortedBooks)
             {
                 <tr>
-                    <td>
-                        @Html.DisplayFor(model => book.BookId)
-                    </td>
-                    <td>
+                    <td class="book-cells">
                         @book.Title
                     </td>
                     <td>
-                        @book.Author
+                        <a asp-page="MoreInfo" asp-route-id="@book.BookId">READ MORE</a>
                     </td>
+                </tr>
+                <tr>
+                    <td class ="author-cells">
+                        by @book.Author
+                    </td>               
                 </tr>
             }
         </table>

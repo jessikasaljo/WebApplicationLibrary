@@ -28,11 +28,10 @@ namespace MCEJ.Controllers
             return bookService.GetBooks();
         }
 
-        [HttpGet("byId")]
-
+        [HttpGet("ById")]
         public Book GetBook(int id)
         {
-            return bookService.GetBooksById(id);
+            return bookService.GetBookById(id);
         }
 
 
