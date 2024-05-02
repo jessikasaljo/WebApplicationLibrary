@@ -16,9 +16,9 @@ namespace Library_Client
 
 
         //Add book
-        public void AddBook (string title, string author, string description, string pages)
+        public void AddBook (int id, string title, string author, string description, string pages)
         {
-            Book book = new Book(title, author, description, pages);
+            Book book = new Book(id, title, author, description, pages);
 
             string json = JsonConvert.SerializeObject(book);
 
@@ -61,7 +61,7 @@ namespace Library_Client
         //Edit book
         public void EditBook(int id, string title, string author, string description, string pages)
         {
-            Book book = new Book(title, author, description, pages);
+            Book book = new Book(id, title, author, description, pages);
             string json = JsonConvert.SerializeObject(book);
 
             HttpClient client = new HttpClient();
@@ -69,19 +69,6 @@ namespace Library_Client
             HttpResponseMessage response = client.PutAsync($"https://localhost:7072/api/book/editBook?id={id}", httpContent).Result;
             Console.WriteLine("Status code: " + response.StatusCode);
 
-
-           /* // Skapa URL med id och de nya uppgifterna om boken
-            string url = $"https://localhost:7072/api/book/editBook?id={id}&title={title}&author={author}&description={description}&pages={pages}";
-
-            // Skapa en HttpClient för att skicka förfrågan till API:et
-            HttpClient client = new HttpClient();
-
-            // Skicka PUT-förfrågan till API:et
-            HttpContent httpContent = new StringContent(json, Encoding.UTF8, "application/json");
-            HttpResponseMessage response = client.PutAsync(url, httpContent).Result;*/
-
-            // Kontrollera svaret från API:et
-           /* Console.WriteLine("Status code: " + response.StatusCode);*/
             if (response.IsSuccessStatusCode)
             {
                 Console.WriteLine("Book successfully edited!");

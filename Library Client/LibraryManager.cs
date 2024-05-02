@@ -35,6 +35,19 @@ namespace Library_Client
         //Add new book
         public void AddNewBook()
         {
+            Console.WriteLine("Id: ");
+            int newId;
+
+            try
+            {
+                newId = int.Parse(Console.ReadLine());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("That was not a number.");
+                return;
+            }
+
             Console.WriteLine("Title: ");
              string newTitle = Console.ReadLine();
 
@@ -47,7 +60,7 @@ namespace Library_Client
             Console.WriteLine("Number of pages: ");
              string newPages = Console.ReadLine();
 
-            requests.AddBook(newTitle, newAuthor, newDescription, newPages);
+            requests.AddBook(newId, newTitle, newAuthor, newDescription, newPages);
         }
 
 

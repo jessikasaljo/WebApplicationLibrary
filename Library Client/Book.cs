@@ -19,8 +19,9 @@ namespace Library_Client
 
         public string Pages { get; set; }
 
-        public Book(string title, string author, string description, string pages)
+        public Book(int bookId, string title, string author, string description, string pages)
         {
+            BookId = bookId;
             Title = title;
             Author = author;
             Description = description;
