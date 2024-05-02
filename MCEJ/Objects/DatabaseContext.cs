@@ -8,7 +8,6 @@ namespace MCEJ.Objects
 {
     public class DatabaseContext : DbContext
     {
-
         public DatabaseContext(DbContextOptions options) : base(options)
         {
         }

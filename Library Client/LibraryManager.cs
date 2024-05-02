@@ -22,7 +22,8 @@ namespace Library_Client
             {
                 foreach (Book book in books)
                 {
-                    Console.WriteLine($"Title: {book.Title}\r\n" +
+                    Console.WriteLine($"ID: {book.BookId}\r\n" +
+                                      $"Title: {book.Title}\r\n" +
                                       $"Author: {book.Author}\r\n" +
                                       $"Pages: {book.Pages}\r\n" +
                                       $"Description: {book.Description}\r\n");
@@ -31,9 +32,9 @@ namespace Library_Client
         }
 
 
+        //Add new book
         public void AddNewBook()
         {
-
             Console.WriteLine("Title: ");
              string newTitle = Console.ReadLine();
 
@@ -49,6 +50,8 @@ namespace Library_Client
             requests.AddBook(newTitle, newAuthor, newDescription, newPages);
         }
 
+
+        //Edit book
         public void UpdateBook()
         {
             Console.WriteLine("Write the id of the book you want to edit.");
@@ -79,6 +82,8 @@ namespace Library_Client
             requests.EditBook(id, title, author, description, pages);
         }
 
+
+        //Checks if book exists
         private bool BookExists(int id)
         {
             List<Book> books = requests.GetAllBooks();

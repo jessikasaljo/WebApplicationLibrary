@@ -29,7 +29,7 @@ namespace MCEJ.Controllers
 
 
         [HttpGet("ById")]
-        public Book GetBook(int id)
+        public Book GetBookById(int id)
         {
             return bookService.GetBookById(id);
         }

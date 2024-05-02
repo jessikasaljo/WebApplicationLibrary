@@ -21,7 +21,6 @@ namespace Library_Client
 
         public Book(string title, string author, string description, string pages)
         {
-
             Title = title;
             Author = author;
             Description = description;
