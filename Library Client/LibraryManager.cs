@@ -67,7 +67,9 @@ namespace Library_Client
         //Edit book
         public void UpdateBook()
         {
-            Console.WriteLine("Write the id of the book you want to edit.");
+            DisplayAllBooks();
+
+            Console.WriteLine("\nWrite the id of the book you want to edit.");
             int id;
             try
             {
@@ -79,6 +81,7 @@ namespace Library_Client
                 return;
             }
              
+
             BookExists(id);
 
             Console.Clear();
@@ -115,7 +118,9 @@ namespace Library_Client
         //Delete book
         public void DeleteBook()
         {
-            Console.WriteLine("Input id of the book to delete.");
+            DisplayAllBooks();
+
+            Console.WriteLine("\nInput id of the book to delete.");
             int id;
             try
             {
