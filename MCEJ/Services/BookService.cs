@@ -62,6 +62,8 @@ namespace MCEJ.Services
             return true;
         }
 
+
+        //Delete book
         public bool DeleteBook(int id)
         {
             Book bookToDelete = DB.Books.Find(id);

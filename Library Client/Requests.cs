@@ -79,6 +79,8 @@ namespace Library_Client
             }
         }
 
+
+        //Delete book
         public void DeleteBook(int id)
         {
             string url = $"https://localhost:7072/api/book/deleteBook?id={id}";
@@ -98,6 +100,5 @@ namespace Library_Client
                 Console.WriteLine("Something went wrong.");
             }
         }
-
     }
 }

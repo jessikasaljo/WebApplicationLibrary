@@ -5,8 +5,8 @@ namespace MCEJ.Objects
 {
     public class Book
     {
-        [Key] //Primary key
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //Auto Increment
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BookId { get; set; }
         [Required]
         [MaxLength(50)]

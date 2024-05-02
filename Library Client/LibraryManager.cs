@@ -111,6 +111,8 @@ namespace Library_Client
             return false;
         }
 
+
+        //Delete book
         public void DeleteBook()
         {
             Console.WriteLine("Input id of the book to delete.");
