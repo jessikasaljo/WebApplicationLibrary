@@ -36,7 +36,6 @@ namespace Library_Client
 
         public void AddNewBook()
         {
-            
 
             Console.WriteLine("Title: ");
              string newTitle = Console.ReadLine();

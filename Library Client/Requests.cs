@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Library_Client
 {
@@ -24,8 +25,21 @@ namespace Library_Client
             HttpContent httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
 
+
           // HttpResponseMessage response = client.PostAsync("https://localhost:7072/api/Book/AddBook");
 
+            HttpResponseMessage response = client.PostAsync("https://localhost:7072/api/Book/AddBook", httpContent).Result;
+
+
+            Console.WriteLine("Status code: " + response.StatusCode);
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine(title + " successfully added!");
+            }
+            else
+            {
+                Console.WriteLine("Something went wrong.");
+            }
 
         }
 
