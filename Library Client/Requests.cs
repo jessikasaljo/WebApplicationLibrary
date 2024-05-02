@@ -92,5 +92,25 @@ namespace Library_Client
             }
         }
 
+        public void DeleteBook(int id)
+        {
+            string url = $"https://localhost:7072/api/book/deleteBook?id={id}";
+
+            HttpClient client = new HttpClient();
+
+            HttpResponseMessage response = client.DeleteAsync(url).Result;
+
+            Console.WriteLine("Status code: " + response.StatusCode);
+            
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine("Book successfully deleted.");
+            }
+            else
+            {
+                Console.WriteLine("Something went wrong.");
+            }
+        }
+
     }
 }

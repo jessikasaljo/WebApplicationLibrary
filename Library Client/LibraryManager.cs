@@ -92,6 +92,22 @@ namespace Library_Client
             }
             return false;
         }
+
+        public void DeleteBook()
+        {
+            Console.WriteLine("Input id of the book to delete.");
+            int id;
+            try
+            {
+                id = int.Parse(Console.ReadLine());
+                requests.DeleteBook(id);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("That was not a number.");
+                return;
+            }
+        }
     }
  }
 

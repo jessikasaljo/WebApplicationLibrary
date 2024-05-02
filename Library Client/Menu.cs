@@ -64,7 +64,7 @@ namespace Library_Client
                     case 4:
                         Console.Clear();
                         Console.WriteLine("Remove a book");
-                        // Lägg till kod för att ta bort en bok
+                        libraryManager.DeleteBook();
                         BackToMainMenu();
                         break;
 
