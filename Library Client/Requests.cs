@@ -48,7 +48,7 @@ namespace Library_Client
         public void EditBook(int id, string title, string author, string description, string pages)
         {
             // Skapa URL med id och de nya uppgifterna om boken
-            string url = $"https://localhost:7294/api/book/editBook?id={id}&title={title}&author={author}&description={description}&pages={pages}";
+            string url = $"https://localhost:7072/api/book/editBook?id={id}&title={title}&author={author}&description={description}&pages={pages}";
 
             // Skapa en HttpClient för att skicka förfrågan till API:et
             HttpClient client = new HttpClient();
