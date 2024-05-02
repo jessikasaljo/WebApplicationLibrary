@@ -47,8 +47,6 @@ namespace Library_Client
              string newPages = Console.ReadLine();
 
             requests.AddBook(newTitle, newAuthor, newDescription, newPages);
-
-
         }
 
         public void UpdateBook()
