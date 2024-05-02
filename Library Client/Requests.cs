@@ -10,6 +10,7 @@ namespace Library_Client
 {
     public class Requests
     {
+        //Fields
         public LibraryManager libraryManager;
 
 
@@ -49,7 +50,6 @@ namespace Library_Client
         {
             HttpClient httpClient = new HttpClient();
             HttpResponseMessage response = httpClient.GetAsync("https://localhost:7072/api/book").Result;
-            //Console.WriteLine($"Status code: {response.StatusCode}\r\n");
 
             if (response.IsSuccessStatusCode)
             {
@@ -59,6 +59,8 @@ namespace Library_Client
             return null;
         }
 
+
+        //Edit book
         public void EditBook(int id, string title, string author, string description, string pages)
         {
             // Skapa URL med id och de nya uppgifterna om boken

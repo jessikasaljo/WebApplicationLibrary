@@ -14,7 +14,7 @@ namespace MCEJ.Services
 
         public List<Book> GetBooks()
         {
-            return DB.GetBooks();
+            return DB.Books.ToList();
         }
 
         public Book GetBookById(int id)

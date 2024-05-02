@@ -9,24 +9,24 @@ namespace MCEJ.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        // Detta är API:t
-
-        // Endast GET fungerar på webbsidan om man inte har gjort en form till den, då fungerar även POST. För att testa PUT och DELETE måste
-        //man använda Postman eller Swagger.
-
+        //Fields
         BookService bookService;
 
+
+        //Constructor
         public BookController(BookService bookService)
         {
             this.bookService = bookService;
         }
 
         
+        //Queries
         [HttpGet]
-        public List<Book> GetBooks()
+        public List<Book> Get()
         {
             return bookService.GetBooks();
         }
+
 
         [HttpGet("ById")]
         public Book GetBook(int id)
@@ -59,6 +59,7 @@ namespace MCEJ.Controllers
             return BadRequest();
         }
 
+
         [HttpDelete("DeleteBook")]
         public ActionResult DeleteBook(Book book)
         {
@@ -68,8 +69,6 @@ namespace MCEJ.Controllers
                 return Ok();
             }
             return BadRequest();
-        }
-
-       
+        } 
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using MCEJ.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MCEJ.Objects
 {
@@ -13,17 +14,5 @@ namespace MCEJ.Objects
         }
 
         public DbSet<Book> Books { get; set; }
-
-        public List<Book> GetBooks()
-        {
-            List<Book> books = new List<Book>();
-            books.Add(new Book("The great Gatsby", "F. Scott Fitzgerald", "Nice book", "300"));
-            books.Add(new Book("A Confederacy Of Dunces", "John Kennedy Toole", "Bad book", "500"));
-            
-
-            return books;
-        }
-
-       
     }
 }

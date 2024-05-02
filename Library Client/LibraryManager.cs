@@ -31,9 +31,6 @@ namespace Library_Client
         }
 
 
-        //Get book by id?
-
-
         public void AddNewBook()
         {
 
@@ -83,6 +80,7 @@ namespace Library_Client
             // Anropa EditBook-metoden för att redigera boken
             requests.EditBook(id, title, author, description, pages);
         }
+
         private bool BookExists(int id)
         {
             List<Book> books = requests.GetAllBooks();
