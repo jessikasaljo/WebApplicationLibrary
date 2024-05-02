@@ -62,9 +62,10 @@ namespace MCEJ.Services
             return true;
         }
 
-        public bool DeleteBook(Book book)
+        public bool DeleteBook(int id)
         {
-            Book bookToDelete = DB.Books.Find(book.BookId);
+            Book bookToDelete = DB.Books.Find(id);
+
             if (bookToDelete == null)
             {
                 return false;

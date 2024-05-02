@@ -60,9 +60,9 @@ namespace MCEJ.Controllers
         }
 
         [HttpDelete("DeleteBook")]
-        public ActionResult DeleteBook(Book book)
+        public ActionResult DeleteBook(int id)
         {
-            bool success = bookService.DeleteBook(book);
+            bool success = bookService.DeleteBook(id);
             if (success)
             {
                 return Ok();
