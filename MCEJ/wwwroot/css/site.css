@@ -73,6 +73,12 @@ header a {
 .book-cells {
     padding-right: 100px;
 }
-form-control{
-    width:100px;
+.form-control {
+    width: 300px;
+    height: 40px;
+    margin-left: 500px;
+   
+}
+.btn-primary{
+    margin-top: 50px;
 }
