@@ -16,9 +16,9 @@ namespace Library_Client
 
 
         //Add book
-        public void AddBook (int id, string title, string author, string description, string pages)
+        public void AddBook (string title, string author, string description, string pages)
         {
-            Book book = new Book(id, title, author, description, pages);
+            Book book = new Book(title, author, description, pages);
 
             string json = JsonConvert.SerializeObject(book);
 

@@ -35,32 +35,19 @@ namespace Library_Client
         //Add new book
         public void AddNewBook()
         {
-            Console.WriteLine("Id: ");
-            int newId;
-
-            try
-            {
-                newId = int.Parse(Console.ReadLine());
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("That was not a number.");
-                return;
-            }
-
             Console.WriteLine("Title: ");
-             string newTitle = Console.ReadLine();
+            string newTitle = Console.ReadLine();
 
             Console.WriteLine("Author: ");
-             string newAuthor = Console.ReadLine();
+            string newAuthor = Console.ReadLine();
 
             Console.WriteLine("Description: ");
-             string newDescription = Console.ReadLine();
+            string newDescription = Console.ReadLine();
 
             Console.WriteLine("Number of pages: ");
-             string newPages = Console.ReadLine();
+            string newPages = Console.ReadLine();
 
-            requests.AddBook(newId, newTitle, newAuthor, newDescription, newPages);
+            requests.AddBook(newTitle, newAuthor, newDescription, newPages);
         }
 
 
