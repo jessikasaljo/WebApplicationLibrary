@@ -30,7 +30,7 @@ namespace Library_Client
             HttpResponseMessage response = client.PostAsync("https://localhost:7072/api/Book/AddBook", httpContent).Result;
 
 
-            Console.WriteLine("Status code: " + response.StatusCode);
+           
             if (response.IsSuccessStatusCode)
             {
                 Console.WriteLine(title + " successfully added!");
