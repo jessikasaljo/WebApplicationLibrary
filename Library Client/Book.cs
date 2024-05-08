@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Library_Client
@@ -22,6 +23,7 @@ namespace Library_Client
 
 
         //Constructors
+        public Book() { }
         public Book(int bookId, string title, string author, string description, string pages)
         {
             BookId = bookId;
